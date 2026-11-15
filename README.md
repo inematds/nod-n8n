@@ -12,7 +12,7 @@ O Nod é um agente pessoal grátis e de código aberto da equipe da n8n, que rod
 
 https://inematds.github.io/nod-n8n/guia/
 
-Material educativo do INEMA, público e gratuito. A documentação diz que Nod é um agente pessoal open source da equipe da n8n, com workspace e browser próprios. Está em prévia de pesquisa. Este kit usa somente a documentação clonada; não é relato de instalação ou uso. Veja [FATOS.md](FATOS.md), F01–F02.
+Material educativo do INEMA, público e gratuito. A documentação diz que Nod é um agente pessoal open source da equipe da n8n, com workspace e browser próprios. Está em prévia de pesquisa. A base deste kit é a documentação oficial clonada. A instalação privada numa VPS foi verificada separadamente; veja [VPS.md](VPS.md) e [RELATORIO-VPS.md](RELATORIO-VPS.md). Veja [FATOS.md](FATOS.md), F01–F02.
 
 - [FATOS.md](FATOS.md): afirmações, números e caminhos de origem.
 - [DICAS.md](DICAS.md): 25 dicas com fontes e pegadinhas.
@@ -26,18 +26,19 @@ Material educativo do INEMA, público e gratuito. A documentação diz que Nod �
 
 1. Leia FATOS.md e suas ressalvas. A data de lançamento e a versão do contexto não foram confirmadas nas páginas consultadas.
 2. Escolha desktop ou servidor e leia o checklist correspondente.
-3. Para servidor, rode `bash ferramentas/checar_servidor.sh` e confira cada linha.
-4. Quando decidir instalar, siga a documentação oficial fora deste kit. Esta fase não inicia Nod nem Docker.
+3. Para servidor, siga [VPS.md](VPS.md). O [script SSH](ferramentas/nod_vps.sh) confere requisitos remotos e instala com acesso privado por túnel.
+4. Use `bash ferramentas/nod_vps.sh instalar usuario@host --chave ~/.ssh/sua_chave`. Depois abra o túnel com `tunel` e consulte o token com `token`, no seu terminal. Faça o onboarding com sua conta.
 5. Revise privacidade, modelo, permissões e limite de gasto no checklist de segurança.
 6. Escolha um pedido de TAREFAS.md, substitua os campos e confira o resultado em Usage.
 7. Só depois amplie as conexões, revise memória e configure rotinas; mantenha backup no servidor.
 
-Os passos de produto remetem a FATOS.md, F03–F18, F24–F35 e F44–F64. São orientações para você executar, não ações realizadas aqui.
+Os passos de produto remetem a FATOS.md, F03–F18, F24–F35 e F44–F64. O onboarding, os modelos e as conexões são etapas para você executar com sua conta.
 
 ## Conferir as ferramentas
 
 ```bash
 bash ferramentas/test_checar_servidor.sh
+bash ferramentas/test_nod_vps.sh
 bash ferramentas/checar_servidor.sh
 ```
 

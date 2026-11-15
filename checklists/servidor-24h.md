@@ -1,15 +1,29 @@
 # Checklist — servidor 24/7 em VPS Linux
 
-São passos para uma instalação futura, fora deste kit. Nenhum comando desta página foi executado nesta fase. Não use o clone de referência como pasta de instalação. Fontes: [FATOS.md](../FATOS.md), F07–F18, F21, F30 e F69–F70.
+Checklist reutilizável. Siga o passo a passo em [VPS.md](../VPS.md). A execução real e seus limites estão em [RELATORIO-VPS.md](../RELATORIO-VPS.md). Não use o clone de referência como pasta de instalação. Fontes: [FATOS.md](../FATOS.md), F07–F18, F21, F30 e F69–F70.
 
 ## Preparar
 
 - [ ] Linux AMD64 ou ARM64; ponto de partida de 2 núcleos, 8 GB de memória e 50 GB de disco. Reserve mais para concorrência ou modelos locais. (F07)
-- [ ] Docker Engine 25 ou posterior em modo Linux, Compose v2 ou mais novo (plugin `docker compose`, versão principal ≥ 2), OpenSSL e sha256sum ou shasum. Git também é necessário para build do código. (F08)
+- [ ] Docker Engine 25 ou posterior em modo Linux, Compose v2 ou mais novo (plugin `docker compose`, versão principal ≥ 2), OpenSSL e sha256sum ou shasum. Git e Buildx também são necessários para build do código. O script SSH deste kit exige ainda Bash, Python 3, curl, ss, flock, nice e timeout. (F08)
 - [ ] Rode `bash ferramentas/checar_servidor.sh` a partir deste kit. PRONTO significa apenas que as verificações locais passaram; não valida funcionamento do Nod, rede, Docker daemon ou capacidade sob carga.
 - [ ] Defina se vai usar túnel SSH ou domínio com HTTPS. Mantenha backend, banco, workspace, browser e conexão Docker privados. Preserve o firewall `workspace-network` e os controles de metadata da VPS. (F14–F16)
 
-## Instalar por uma das rotas da doc
+## Rota automatizada deste kit: SSH privado
+
+- [ ] Confirme a chave e a identidade do servidor numa primeira conexão SSH manual.
+- [ ] Simule com `NOD_VPS_DRY=1 bash ferramentas/nod_vps.sh instalar usuario@host`.
+- [ ] Instale com `bash ferramentas/nod_vps.sh instalar usuario@host --chave ~/.ssh/sua_chave`.
+- [ ] Confira `status`: serviços com healthcheck devem estar healthy; auxiliares sem healthcheck devem estar running.
+- [ ] Confirme bind `127.0.0.1:4310`, origin `http://localhost:4310` e restart `unless-stopped`.
+- [ ] Abra `tunel` e obtenha `token` somente no seu terminal. Não grave a sessão.
+- [ ] Faça onboarding por conta própria; não exponha a porta 1455 para callback ChatGPT.
+- [ ] Antes de atualizar, espere as tarefas terminarem e use `atualizar --ref COMMIT_OU_TAG`; o backup é obrigatório.
+- [ ] Se faltar memória/disco ou após duas falhas de build, pare. Não remova recursos alheios.
+
+O script usa `NOD_BIND_ADDRESS` no `.env`. Não modifica o Compose nem gerencia HTTPS. Não mexe em nginx, certbot, firewall, serviços externos ou volumes alheios. Build tem teto de 90 minutos.
+
+## Instalar manualmente por uma das rotas da doc
 
 **Bundle, se disponível para sua conta:** a documentação clonada ainda descreve bundles privados. Não presuma acesso público. Confira a revisão completa e a arquitetura no GitHub autenticado; baixe o `.tar.gz` e seu `.sha256`. A alternativa documentada é o artifact de um workflow Self-host bundle bem-sucedido. Guarde o bundle. (F11–F12)
 
@@ -27,7 +41,8 @@ sh install.sh
 
 ```bash
 sh setup.sh
-docker compose up -d --build --wait
+# No .env, mantenha NOD_BIND_ADDRESS=127.0.0.1. PORT deve preceder NOD_PUBLIC_URL.
+nice -n 10 timeout --kill-after=30s 90m docker compose up -d --build --wait
 ```
 
 - [ ] Guarde o `.env` privado. O setup gera token, Vault key e senha do banco; preserva configuração existente. Não exponha os segredos. (F13)
