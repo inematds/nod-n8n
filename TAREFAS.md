@@ -40,9 +40,9 @@ Estes são modelos de pedido escritos para o kit. Substitua os campos entre colc
 
 **O que vai pedir para aprovar:** Envio da mensagem exata ao destinatário mostrado.
 
-**Risco a observar:** Confira se a fatura já foi paga e se a conta está certa antes de aprovar.
+**Risco a observar:** Confira se a fatura já foi paga e se a conta está certa antes de aprovar. Sigilo/LGPD: dados de clientes lidos nos apps passam, por padrão, pelo serviço de conexão n8n/Composio e chegam ao provedor do modelo. Comece com dados próprios ou anonimizados.
 
-(Fonte: [FATOS.md](FATOS.md), F25, F35, F63.)
+(Fonte: [FATOS.md](FATOS.md), F25–F27, F35, F55, F63.)
 
 ## 5. Cancelar teste grátis
 
@@ -72,7 +72,7 @@ Estes são modelos de pedido escritos para o kit. Substitua os campos entre colc
 
 **Risco a observar:** Revise conta, projeto e conteúdo antes de criar registros.
 
-(Fonte: [FATOS.md](FATOS.md), F24–F25, F35, F63.)
+(Fonte: [FATOS.md](FATOS.md), F24–F25–F27, F35, F55, F63.)
 
 ## 8. Organizar documentos do mês
 
@@ -80,9 +80,9 @@ Estes são modelos de pedido escritos para o kit. Substitua os campos entre colc
 
 **O que vai pedir para aprovar:** Acesso necessário; mudanças em arquivos e envios dependem de aprovação posterior.
 
-**Risco a observar:** Confira se os documentos correspondem ao período e ao destinatário pretendido.
+**Risco a observar:** Confira se os documentos correspondem ao período e ao destinatário pretendido. Sigilo/LGPD: dados de clientes lidos nos apps passam, por padrão, pelo serviço de conexão n8n/Composio e chegam ao provedor do modelo. Comece com dados próprios ou anonimizados.
 
-(Fonte: [FATOS.md](FATOS.md), F35, F55, F63.)
+(Fonte: [FATOS.md](FATOS.md), F26–F27, F35, F55, F63.)
 
 ## 9. Planejar encontro da equipe
 

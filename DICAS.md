@@ -50,7 +50,7 @@ São sugestões editoriais baseadas na documentação, não relatos de uso. As f
 
 9. **Pegadinha: nem tudo fica local.**  
    Não trate “roda no seu computador” como “nada vai para a nuvem”. A doc diz que pedidos de apps  
-   passam pela n8n e pelo Composio por padrão. ZDR tem escopo e não reduz permissões.  
+   passam pela n8n e pelo Composio por padrão. ZDR tem escopo e não reduz permissões. Sigilo/LGPD: dados de clientes lidos nos apps passam, por padrão, pelo serviço de conexão n8n/Composio e chegam ao provedor do modelo. Comece com dados próprios ou anonimizados.
    (Fonte: FATOS.md, F26–F27, F55.)
 
 ## Segurança e privacidade
@@ -139,6 +139,6 @@ São sugestões editoriais baseadas na documentação, não relatos de uso. As f
    (Fonte: FATOS.md, F49–F51.)
 
 25. **Confira antes de repetir.**  
-   Se um pagamento terminar como Result unknown, confira o pedido antes de tentar de novo.  
-   Schedules param com a máquina; WhatsApp QR pode sofrer restrições. Não dependa de hosted futuro.  
+   Se um pagamento terminar como “resultado desconhecido” (Result unknown), confira o pedido antes de tentar de novo.
+   Agendamentos param com a máquina. A conexão do WhatsApp por QR usa Baileys, um cliente não oficial: há risco de restrição da conta e uma atualização do WhatsApp pode derrubar a conexão. Nossa sugestão: se você usa WhatsApp com clientes, prefira Telegram para conversar com o Nod. Não dependa de hospedagem gerenciada futura.
    (Fonte: FATOS.md, F29, F33, F56.)
