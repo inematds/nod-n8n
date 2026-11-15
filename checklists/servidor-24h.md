@@ -1,6 +1,6 @@
 # Checklist — servidor 24/7 em VPS Linux
 
-Checklist reutilizável. Siga o passo a passo em [VPS.md](../VPS.md). A execução real e seus limites estão em [RELATORIO-VPS.md](../RELATORIO-VPS.md). Não use o clone de referência como pasta de instalação. Fontes: [FATOS.md](../FATOS.md), F07–F18, F21, F30 e F69–F70.
+Checklist reutilizável. Siga o passo a passo em [VPS.md](../VPS.md). Não use o clone de referência como pasta de instalação. Fontes: [FATOS.md](../FATOS.md), F07–F18, F21, F30 e F69–F70.
 
 ## Preparar
 

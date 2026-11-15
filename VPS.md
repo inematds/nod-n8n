@@ -144,4 +144,4 @@ Base: arquivos oficiais `deploy/self-host.mdx`, `deploy/configuration.md`, `depl
 bash ferramentas/test_nod_vps.sh
 ```
 
-O teste valida parsing, ajuda, rejeição de argumentos perigosos, plano de atualização e restrição do token. Substitui SSH por um comando que falha se chamado. Não testa uma instalação Docker completa. A verificação operacional da VPS é registrada separadamente em `RELATORIO-VPS.md`.
+O teste valida parsing, ajuda, rejeição de argumentos perigosos, plano de atualização e restrição do token. Substitui SSH por um comando que falha se chamado. Não testa uma instalação Docker completa.

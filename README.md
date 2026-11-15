@@ -12,7 +12,7 @@ O Nod é um agente pessoal grátis e de código aberto da equipe da n8n, que rod
 
 https://inematds.github.io/nod-n8n/guia/
 
-Material educativo do INEMA, público e gratuito. A documentação diz que Nod é um agente pessoal open source da equipe da n8n, com workspace e browser próprios. Está em prévia de pesquisa. A base deste kit é a documentação oficial clonada. A instalação privada numa VPS foi verificada separadamente; veja [VPS.md](VPS.md) e [RELATORIO-VPS.md](RELATORIO-VPS.md). Veja [FATOS.md](FATOS.md), F01–F02.
+Material educativo do INEMA, público e gratuito. A documentação diz que Nod é um agente pessoal open source da equipe da n8n, com workspace e browser próprios. Está em prévia de pesquisa. A base deste kit é a documentação oficial clonada. A instalação privada numa VPS foi verificada separadamente; veja [VPS.md](VPS.md). Veja [FATOS.md](FATOS.md), F01–F02.
 
 - [FATOS.md](FATOS.md): afirmações, números e caminhos de origem.
 - [DICAS.md](DICAS.md): 25 dicas com fontes e pegadinhas.
